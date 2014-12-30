@@ -97,5 +97,5 @@ int				get_next_line(int const fd, char **line)
 			if (i == 0)
 				return (buff_cut(gnlfd, gnlfd->length, line));
 		}
-	return (*line = NULL, GNL_ERROR);
+	return (GNL_ERROR);
 }
