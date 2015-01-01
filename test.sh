@@ -12,3 +12,5 @@ time ./gnl_test $@ > gnl.txt
 
 rm gnl_test
 rm get_next_line.o
+
+cat gnl.txt

@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "get_next_line.h"
 
-static void		gnl_memcpy(void *dst, void *src, int len)
+static void		gnl_memcpy(const void *dst, const void *src, int len)
 {
 	while (len > 7)
 	{
@@ -66,7 +66,7 @@ static int		buff_read(t_gnlfd *gnlfd)
 static int		buff_cut(t_gnlfd *gnlfd, int len, char **dst, int rem)
 {
 	if ((*dst = (char*)malloc(S(char, len + 1))) == NULL)
-		return (GNL_ERROR);
+		return (*dst = NULL, GNL_ERROR);
 	gnl_memcpy(*dst, gnlfd->buff, S(char, len));
 	(*dst)[len] = '\0';
 	len += rem;
