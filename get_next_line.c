@@ -35,13 +35,13 @@ static t_gnlfd	*get_gnlfd(int const fd)
 	tmp = gnlfd_list;
 	while (tmp != NULL)
 	{
-		if (tmp->fd == fd && !tmp->destroy)
+		if (tmp->fd == fd)
 			return (tmp);
 		tmp = tmp->next;
 	}
 	if ((tmp = (t_gnlfd*)malloc(sizeof(t_gnlfd))) == NULL)
 		return (NULL);
-	*tmp = (t_gnlfd){NULL, fd, 0, 0, 0, gnlfd_list};
+	*tmp = (t_gnlfd){NULL, fd, 0, 0, gnlfd_list};
 	gnlfd_list = tmp;
 	return (tmp);
 }
@@ -92,7 +92,7 @@ int				get_next_line(int const fd, char **line)
 				break ;
 			if (i == 0 && gnlfd->length == 0)
 				return (*line = NULL, free(gnlfd->buff),
-				gnlfd->destroy = 1, GNL_EOF);
+				*gnlfd = (t_gnlfd){NULL, fd, 0, 0, gnlfd->next}, GNL_EOF);
 			if (i == 0)
 				return (buff_cut(gnlfd, gnlfd->length, line, 0));
 		}

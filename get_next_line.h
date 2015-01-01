@@ -19,7 +19,6 @@ typedef struct	s_gnlfd
 	int				fd;
 	int				length;
 	int				offset;
-	int				destroy;
 	struct s_gnlfd	*next;
 }				t_gnlfd;
 
