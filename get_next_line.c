@@ -6,7 +6,7 @@
 /*   By: jaguillo <jaguillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 11:12:36 by jaguillo          #+#    #+#             */
-/*   Updated: 2014/12/30 11:12:37 by jaguillo         ###   ########.fr       */
+/*   Updated: 2015/01/05 12:01:29 by jaguillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int		buff_read(t_gnlfd *gnlfd)
 		free(gnlfd->buff - gnlfd->offset);
 	gnlfd->buff = tmp;
 	len = read(gnlfd->fd, tmp + gnlfd->length, GNL_BUFF);
-	gnlfd->length += len;
+	gnlfd->length += (len < 0) ? 0 : len;
 	gnlfd->offset = 0;
 	return (len);
 }
