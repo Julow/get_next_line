@@ -6,7 +6,7 @@
 /*   By: jaguillo <jaguillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 11:12:27 by jaguillo          #+#    #+#             */
-/*   Updated: 2014/12/30 11:12:30 by jaguillo         ###   ########.fr       */
+/*   Updated: 2015/01/06 23:45:47 by jaguillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ typedef struct	s_gnlfd
 	int				fd;
 	int				length;
 	int				offset;
+	int				i;
 	struct s_gnlfd	*next;
 }				t_gnlfd;
 
 # ifndef EOF
 #  define EOF			-1
 # endif
-
-# define S(t, l)		(sizeof(t) * (l))
 
 # define GNL_BUFF		192
 
