@@ -6,7 +6,7 @@
 /*   By: jaguillo <jaguillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 11:12:27 by jaguillo          #+#    #+#             */
-/*   Updated: 2015/01/06 23:45:47 by jaguillo         ###   ########.fr       */
+/*   Updated: 2015/01/14 21:20:54 by jaguillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct	s_gnlfd
 #  define EOF			-1
 # endif
 
-# define GNL_BUFF		192
+# define GNL_BUFF		512
 
 # define GNL_SUCCES		1
 # define GNL_EOF		0
